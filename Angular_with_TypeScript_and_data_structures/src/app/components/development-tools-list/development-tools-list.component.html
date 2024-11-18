@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-white text-center" style="background-color: #34495e;">
+          <h4>Developer Tools List</h4>
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newTool"
+              placeholder="Enter New List of Dev Tool"
+            />
+            <button class="btn btn-success" (click)="addTool()">Add</button>
+          </div>
+          
+          <ul class="list-group mt-3">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let tool of toolItems"
+            >
+              {{ tool }}
+              <button
+                class="btn btn-sm text-white"
+                (click)="deleteTool(tool)"
+                style="background-color: #e74c3c;"
+              >
+                Delete
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

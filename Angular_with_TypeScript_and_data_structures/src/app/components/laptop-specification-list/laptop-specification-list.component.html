@@ -1,0 +1,43 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-white text-center" style="background-color: #34495e;">
+          <h4>Laptop Specification List</h4>
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newLaptopBrand"
+              placeholder="Enter Laptop Brand"
+            />
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newLaptopSpecs"
+              placeholder="Enter Specifications"
+            />
+            <button class="btn btn-success" (click)="addLaptop()">Add</button>
+          </div>
+
+          <ul class="list-group mt-3">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let laptop of laptops"
+            >
+              {{ laptop.brand }} - {{ laptop.specs }}
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="deleteLaptop(laptop)"
+              >
+                Delete
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-white text-center" style="background-color: #34495e;">
+          <h4>Tour List</h4>
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newTourName"
+              placeholder="Enter Tour Name"
+            />
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newLocation"
+              placeholder="Location"
+            />
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="newDate"
+              placeholder="Date"
+            />
+            <button class="btn btn-success" (click)="addTour()">Add</button>
+          </div>
+
+          <ul class="list-group mt-3">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let tour of tours"
+            >
+              {{ tour.name }} - {{ tour.location }} ({{ tour.date }})
+              <button
+                class="btn btn-sm text-white"
+                (click)="deleteTour(tour)"
+                style="background-color: #e74c3c;"
+              >
+                Delete
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

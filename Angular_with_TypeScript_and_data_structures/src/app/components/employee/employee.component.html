@@ -1,0 +1,19 @@
+<br><br><br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h2 class="text-white" style="background-color: #34495e; padding: 15px;">Employee List</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="newEmployee" placeholder="Enter new employee name" />
+        <button class="btn btn-success" (click)="addEmployee()">Add</button>
+      </div>
+
+      <ul class="list-group mt-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let employee of employees">
+          {{ employee }}
+          <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

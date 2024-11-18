@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-white text-center" style="background-color: #34495e;">
+          <h4>Animal List</h4>
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newAnimal"
+              placeholder="Enter New Animal"
+            />
+            <button class="btn btn-success" (click)="addFruit()">Add</button>
+          </div>
+
+          <ul class="list-group">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let animal of animal"
+            >
+              {{ animal }}
+              <button
+                class="btn btn-sm text-white"
+                (click)="deleteFruit(animal)"
+                style="background-color: #e74c3c;"
+              >
+                Delete
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
